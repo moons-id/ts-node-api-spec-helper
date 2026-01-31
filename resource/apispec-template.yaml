@@ -1,0 +1,19 @@
+paths:
+  {{PATH}}:
+    {{METHOD_LOWER}}:
+    operationId: {{METHOD_UPPER}}-{{OP_PATH}}
+    tags:
+      - {{TAG}}
+    summary: {{TITLE}}
+    description: |
+      Description went here
+
+
+      Changelog:
+      | Version | Desc | Author |
+      | ------- | ------- | ------- |
+      | {{API_VERSION}} | Initial version | {{AUTHOR}} |
+    parameters:
+{{PARAMETERS}}
+    requestBody:
+    responses:

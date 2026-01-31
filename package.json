@@ -1,0 +1,39 @@
+{
+  "name": "api-docs-helper",
+  "version": "1.0.0",
+  "description": "Node.js script to generate API documentation paths from templates",
+  "main": "dist/api-docs-generator.js",
+  "type": "module",
+  "bin": {
+    "api-docs": "./dist/api-docs-generator.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/api-docs-generator.js",
+    "dev": "ts-node src/api-docs-generator.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moons-id/ts-node-api-spec-helper.git"
+  },
+  "keywords": [
+    "api",
+    "documentation",
+    "yaml",
+    "openapi"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^25.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
