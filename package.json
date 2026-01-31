@@ -5,12 +5,13 @@
   "main": "dist/api-docs-generator.js",
   "type": "module",
   "bin": {
-    "api-docs": "./dist/api-docs-generator.js"
+    "api-docs": "./dist/api-docs-generator.js",
+    "api-docs:update": "./dist/api-docs-update.js"
   },
   "scripts": {
     "build": "tsc",
-    "start": "node dist/api-docs-generator.js",
-    "dev": "ts-node src/api-docs-generator.ts"
+    "dev": "ts-node src/api-docs-generator.ts",
+    "dev:update": "ts-node src/api-docs-update.ts"
   },
   "repository": {
     "type": "git",

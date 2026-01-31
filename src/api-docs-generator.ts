@@ -2,9 +2,8 @@
 
 import fs from "fs";
 import path from "path";
-import readline from "readline";
+import readline, {type Interface} from "readline";
 import yaml from "js-yaml";
-import { execSync } from "child_process";
 
 // Create readline interface for user input
 const rl = readline.createInterface({
@@ -12,14 +11,14 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
+const validMethods = ['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace', 'connect'];
+
 // Promisify readline question
 function question(prompt: string): Promise<string> {
   return new Promise((resolve) => {
     rl.question(prompt, resolve);
   });
 }
-
-const validMethods = ['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace', 'connect'];
 
 /**
  * Generate parameters YAML from path and query params
@@ -259,7 +258,7 @@ async function main() {
 
     // Prepare template variables
     const variables = {
-      PATH: pathOnly,
+      PATH: pathOnly.split('?')[0],
       METHOD_LOWER: methodLower,
       METHOD_UPPER: methodUpper,
       OP_PATH: opPath,
