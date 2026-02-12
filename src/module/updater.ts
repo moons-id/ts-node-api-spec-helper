@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import fs from "fs";
 import path from "path";
 import readline from "readline";
@@ -99,7 +97,7 @@ function saveYaml(filePath: string, data: any) {
 /**
  * Main program
  */
-async function main() {
+export async function updater() {
   try {
     let apiDocsPath = 'resource/api-docs/v1/api-docs.yaml';
 
@@ -230,9 +228,3 @@ async function main() {
     rl.close();
   }
 }
-
-// Run main program
-main().catch((error) => {
-  console.error(`Error: ${(error as Error).message}`);
-  process.exit(1);
-});

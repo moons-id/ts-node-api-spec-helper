@@ -1,17 +1,15 @@
 {
-  "name": "api-docs-helper",
+  "name": "@novando/api-docs",
   "version": "1.0.0",
   "description": "Node.js script to generate API documentation paths from templates",
   "main": "dist/api-docs-generator.js",
   "type": "module",
   "bin": {
-    "api-docs": "./dist/api-docs-generator.js",
-    "api-docs:update": "./dist/api-docs-update.js"
+    "api-docs": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node src/api-docs-generator.ts",
-    "dev:update": "ts-node src/api-docs-update.ts"
+    "dev": "ts-node src/index.ts"
   },
   "repository": {
     "type": "git",

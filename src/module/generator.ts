@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-
 import fs from "fs";
 import path from "path";
-import readline, {type Interface} from "readline";
+import readline from "readline";
 import yaml from "js-yaml";
 
 // Create readline interface for user input
@@ -191,7 +189,7 @@ function replaceTemplateVars(template: string, variables: Record<string, string>
 /**
  * Main program
  */
-async function main() {
+export async function generator() {
   try {
     let apiSpecPath = `${process.cwd()}/resource/api-docs/v1/api-docs.yaml`;
     const templatePath = 'resource/apispec-template.yaml';
@@ -294,9 +292,3 @@ async function main() {
     rl.close();
   }
 }
-
-// Run main program
-main().catch((error) => {
-  console.error(`Fatal error: ${error.message}`);
-  process.exit(1);
-});
