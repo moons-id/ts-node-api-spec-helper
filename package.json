@@ -1,5 +1,5 @@
 {
-  "name": "@novando/api-docs",
+  "name": "@dogulabs/api-docs",
   "version": "1.0.0",
   "description": "Node.js script to generate API documentation paths from templates",
   "main": "dist/api-docs-generator.js",

@@ -1,7 +1,11 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import readline from "readline";
 import yaml from "js-yaml";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Create readline interface for user input
 const rl = readline.createInterface({
@@ -192,7 +196,7 @@ function replaceTemplateVars(template: string, variables: Record<string, string>
 export async function generator() {
   try {
     let apiSpecPath = `${process.cwd()}/resource/api-docs/v1/api-docs.yaml`;
-    const templatePath = 'resource/apispec-template.yaml';
+    const templatePath = path.resolve(__dirname, '../../resource/apispec-template.yaml');
 
     // Check template exists
     if (!fs.existsSync(templatePath)) {
